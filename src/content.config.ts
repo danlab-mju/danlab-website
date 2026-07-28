@@ -8,7 +8,7 @@ const publications = defineCollection({
     authors: z.string(),
     venue: z.string(),
     year: z.number(),
-    type: z.enum(['journal', 'conference']).default('journal'),
+    type: z.enum(['journal', 'conference', 'submitted']).default('journal'),
     pillar: z.enum(['distributed-ai', 'networked-robotics', 'on-device']).optional(),
     note: z.string().optional(),
     link: z.string().optional(),
