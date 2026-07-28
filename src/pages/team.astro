@@ -42,7 +42,10 @@ const initials = (en) => en.split(' ').map((w) => w[0]).join('');
           <div class="muted" style="font-size:0.9rem;">
             Federated learning · wireless communications · physical AI · IEEE 802 standardization
           </div>
-          <div style="margin-top:6px;"><a href="mailto:hhpark@mju.ac.kr">hhpark [at] mju.ac.kr</a></div>
+          <div style="margin-top:6px; display:flex; gap:18px; flex-wrap:wrap;">
+            <a href="mailto:hhpark@mju.ac.kr">hhpark [at] mju.ac.kr</a>
+            <a class="btn" style="font-size:0.88rem; padding:0;" href={`${base}/professor`}>Full profile</a>
+          </div>
         </div>
       </div>
 

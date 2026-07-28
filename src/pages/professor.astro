@@ -1,0 +1,153 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/professor.json';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// 경력·활동: 기존 danlab.mju.ac.kr/members/professor 페이지 (scratchpad 백업) 기준
+const career = [
+  { period: '2020.03 – 현재', title: '명지대학교 정보통신공학과 교수', detail: 'Myongji University · Dept. of Information and Communication Engineering' },
+  { period: '2017.03 – 2020.02', title: '한국성서대학교 컴퓨터소프트웨어학과 조교수', detail: 'Korean Bible University · Assistant Professor' },
+  { period: '2014.10 – 2017.02', title: 'LG전자 선임연구원 — Wi-Fi 표준화', detail: 'CTO Division, Advanced Standard R&D Lab · IEEE 802.11ax / 802.11ba (Wake-Up Radio) 표준화 그룹 멤버' },
+  { period: '2013.01 – 2014.10', title: 'INRIA · Télécom Bretagne 박사후연구원 (France)', detail: 'DIONYSOS Research Group · 무선 네트워크 QoE, Multi-path TCP 시스템 구현' },
+  { period: '2011.09 – 2013.01', title: '고려대학교 연구교수', detail: 'Mobile Networks and Communications Lab (Prof. Sangheon Pack)' },
+  { period: '2011.08', title: '고려대학교 전기전자공학 박사', detail: 'Ph.D., Korea University · Advisors: Prof. Chul-Hee Kang, Prof. Sangheon Pack' },
+];
+const roles = [
+  { period: '2023 – 현재', title: 'TTA ICT 국제표준화 전문가' },
+  { period: '2023 – 현재', title: '한국통신학회 상임이사' },
+  { period: '2024', title: '한국통신학회 통신네트워크 소사이어티 회장' },
+];
+const SHOW = 6;
+const patentGroups = [
+  { id: 'pat-filed', label: '국제특허출원 (International filings)', items: data.patentsFiled },
+  { id: 'pat-reg', label: '국제특허등록 (International registrations)', items: data.patentsRegistered },
+  { id: 'pat-dom', label: '국내특허등록 (Korean registrations)', items: data.patentsDomestic },
+];
+---
+<Base title="Professor" description="박현희 교수 — DAN Lab Director, Myongji University">
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><i>01</i> / Director</span>
+        <h2>Hyunhee Park 박현희</h2>
+      </div>
+
+      <div class="prof-card">
+        <img class="prof-photo" src={`${base}/team/hyunhee-park.jpg`} alt="Hyunhee Park" />
+        <div>
+          <div class="muted">Professor, Dept. of Information and Communication Engineering, Myongji University</div>
+          <div class="muted" style="font-size:0.9rem;">
+            Federated learning · wireless communications · physical AI · IEEE 802 standardization
+          </div>
+          <div class="mono" style="font-size:0.78rem; margin-top:6px;">
+            Office: 5543, Engineering Building 5, Myongji University
+          </div>
+          <div style="margin-top:6px; display:flex; gap:18px; flex-wrap:wrap;">
+            <a href="mailto:hhpark@mju.ac.kr">hhpark [at] mju.ac.kr</a>
+            <a href="https://scholar.google.com/citations?user=ndWaTncAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <p style="max-width:70ch;">
+        박현희 교수는 명지대학교 정보통신공학과 교수로 DAN Lab을 이끌고 있습니다.
+        LG전자에서 Wi-Fi 표준화(IEEE 802.11ax, 802.11ba Wake-Up Radio) 선임연구원으로
+        일했으며, 프랑스 INRIA·Télécom Bretagne 박사후연구원으로 무선 네트워크 QoE와
+        Multi-path TCP를 연구했습니다. 고려대학교에서 박사학위를 받았습니다.
+      </p>
+      <p class="en" style="max-width:70ch;">
+        Hyunhee Park is a Professor at Myongji University and directs DAN Lab.
+        She worked at LG Electronics as a Senior Research Engineer on Wi-Fi
+        standardization (IEEE 802.11ax, 802.11ba Wake-Up Radio), and as a
+        postdoctoral researcher at INRIA / Télécom Bretagne in France on
+        wireless QoE and Multi-path TCP. She received her Ph.D. from Korea University.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><i>02</i> / Career</span>
+        <h2>경력</h2>
+      </div>
+      <div class="proj-list">
+        {career.map((c) => (
+          <article class="proj">
+            <div class="period">{c.period}</div>
+            <div>
+              <div class="title">{c.title}</div>
+              <div class="meta">{c.detail}</div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="section-head" style="margin-top:56px;">
+        <h2>학회 · 표준화 활동</h2>
+      </div>
+      <div class="proj-list">
+        {roles.map((r) => (
+          <article class="proj">
+            <div class="period">{r.period}</div>
+            <div><div class="title">{r.title}</div></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><i>03</i> / Standardization</span>
+        <h2>IEEE 802.11 표준화 기고</h2>
+        <p class="mono" style="font-size:0.78rem;">{data.standardization.length} contributions · IEEE 802.11ax / 802.11ba (WUR)</p>
+      </div>
+      <div class="pub-list collapsed" id="std-list">
+        {data.standardization.map((s, i) => (
+          <article class={i >= SHOW ? 'pub extra' : 'pub'}>
+            <div class="year">{(s.match(/(\d{4})\.?$/) ?? [])[1] ?? ''}</div>
+            <div><div class="title" style="font-weight:400; font-size:0.92rem;">{s}</div></div>
+          </article>
+        ))}
+      </div>
+      {data.standardization.length > SHOW && (
+        <button class="show-more" type="button" data-target="std-list">더보기 · {data.standardization.length - SHOW} more</button>
+      )}
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><i>04</i> / Patents</span>
+        <h2>Patents (before 2017)</h2>
+      </div>
+      {patentGroups.map((g) => (
+        <div style="margin-bottom:48px;">
+          <h3 style="margin-bottom:6px;">{g.label} <span class="mono muted" style="font-size:0.75rem;">· {g.items.length}</span></h3>
+          <div class="pub-list collapsed" id={g.id}>
+            {g.items.map((p, i) => (
+              <article class={i >= SHOW ? 'pub extra' : 'pub'}>
+                <div class="year"></div>
+                <div><div class="title" style="font-weight:400; font-size:0.9rem;">{p}</div></div>
+              </article>
+            ))}
+          </div>
+          {g.items.length > SHOW && (
+            <button class="show-more" type="button" data-target={g.id}>더보기 · {g.items.length - SHOW} more</button>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll<HTMLButtonElement>('.show-more').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.getElementById(btn.dataset.target ?? '')?.classList.remove('collapsed');
+        btn.remove();
+      });
+    });
+  </script>
+</Base>
