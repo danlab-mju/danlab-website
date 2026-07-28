@@ -26,6 +26,38 @@ const pillars = [
     desc: '분산 로봇 시스템의 지능은 결국 각 디바이스의 NPU 위에서 실행됩니다. 온디바이스 추론의 효율화와 함께, 이를 뒷받침하는 Wi-Fi 7 multi-link operation 등 차세대 무선 기술을 연구하고 IEEE 802 표준화 활동에 직접 참여합니다.',
   },
 ];
+// 과제 목록: 기존 danlab.mju.ac.kr Google Sites Projects 페이지 (site-backup/final/text/projects.txt)
+const ongoing = [
+  { period: '2022.03 – 2027.02', title: '분산 머신러닝 기반 지능형 플라잉 기지국을 위한 AI-MAC 프로토콜', funder: '한국연구재단 이공분야기초연구사업 (중견연구)', role: '연구책임자' },
+  { period: '2021.04 – 2025.12', title: '설명가능한 인공지능 기반 무선랜 네트워크 시스템 고도화 핵심 기술 연구', funder: 'IITP 정보통신방송기술개발사업 (혁신도약형)', role: '연구책임자' },
+  { period: '2024.08 – 2027.12', title: '국산 AI반도체 기반 비전인식기술 소프트웨어개발도구(SDK) 개발', funder: '산업통상자원부·KEIT 소재부품기술개발 (이종기술융합형)', role: '공동연구기관' },
+  { period: '2025.04 – 2029.03', title: '제습모듈을 내장한 웨이퍼 이송장비 및 편축보정기술개발과 딥러닝을 활용한 광학문자인식(OCR) 및 Chipping 검출을 포함한 하이브리드 검사장비 기술 개발', funder: '중소기업기술정보진흥원 중소기업기술혁신개발사업 (수출지향형)', role: '공동연구기관' },
+  { period: '2024.04 – 2026.11', title: '자율차 시범지구 적용을 위한 인프라 구축 방안 연구', funder: '한국도로공사 스마트도로연구단', role: '공동연구원' },
+  { period: '2025.06 – 2025.12', title: 'AI 영상분석 기반 고속도로 이상상황 판단 기술 활용에 관한 연구', funder: '한국도로공사', role: '연구책임자' },
+  { period: '2025.06 – 2026.05', title: '차세대 무선랜 Wi-Fi 8 국제 표준화 및 표준특허 개발 연구', funder: '현대자동차·기아', role: '연구책임자' },
+  { period: '2025.04 – 2025.10', title: '임베디드 AI 기반 소형 엣지 디바이스용 가상키패드 개발', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2025.04 – 2025.10', title: 'AI 기반 생활 패턴 예측과 개인 맞춤형 미디어 경험을 위한 대화형 홈 제어 및 AI-PMP 융합 기술 연구', funder: '기업 연구용역 과제', role: '연구책임자' },
+];
+const completed = [
+  { period: '2024.06 – 2024.10', title: '소형 임베디드 디바이스용 외부투사형 인공지능형 가상 인터페이스 기술 개발', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2024.05 – 2024.10', title: '예측지능 알고리즘 기반 개인화된 콘텐츠 및 자동 채널 생성 기술 연구', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2024.01 – 2024.12', title: '2024 표준특허 전략지원 사업', funder: 'IITP 정보통신방송연구개발사업', role: '연구책임자' },
+  { period: '2021.04 – 2023.12', title: '6G 서비스를 위한 인공지능/머신러닝 기반 자율형 MAC 개발', funder: 'IITP 정보통신방송기술개발사업', role: '공동연구원' },
+  { period: '2023.08 – 2023.11', title: '생성AI 데이터 셋 및 예측지능 알고리즘 기반의 서비스 자동화 기술 개발', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2023.05 – 2023.08', title: '소형 임베디드 기반의 빔 프로젝션형 AR 가상 인터페이스 개발', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2022.07 – 2022.11', title: 'XR 기반 사용자 인식 기술을 적용한 가상 인터페이스 개발', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2021.09 – 2022.03', title: '특정 영상의 시청자 추적 및 광고 서비스를 위한 임베디드 AI 기술 개발', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2019.06 – 2022.02', title: '클라우드부터 엣지컴퓨팅 상에서의 massive IoT 보안을 위한 빅데이터 분석 및 보안 프로토콜 개발', funder: '한국연구재단 이공분야기초연구사업', role: '연구책임자' },
+  { period: '2021.04 – 2021.05', title: '인공지능 알고리즘 기반 3D 지도 영상 분석 테스트', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2021.01 – 2021.05', title: '딥러닝 알고리즘을 이용한 특정 동영상 컨텐츠 내 포즈 및 인식 시점 알고리즘 개발', funder: '기업 연구용역 과제', role: '연구책임자' },
+  { period: '2020.04 – 2021.03', title: 'Intelligent IoT 구현을 위한 Digital Twin 기술 연구', funder: '명지대학교 신임교수 학술연구지원 사업', role: '연구책임자' },
+  { period: '2020.08 – 2020.10', title: '카메라 디바이스 기반 인물 영상인식 기술 개발', funder: '기업 BM 기술 컨설팅', role: '연구책임자' },
+  { period: '2017.03 – 2020.02', title: '차세대 와이파이가 연계된 IoT 무선 커넥티비티 융합 플랫폼 구축 및 보안 활용에 관한 연구', funder: '한국연구재단', role: '연구책임자' },
+  { period: '2019.04 – 2019.12', title: 'ADAS(Advanced Driver Assistance System)를 위한 딥러닝 기반의 객체인식 기술 연구', funder: '교내학술연구지원사업', role: '연구책임자' },
+  { period: '2019.03 – 2019.08', title: '확장가능한 허가형 블록체인 기반 신뢰 데이터 공유 체계 연구', funder: 'KISTI 위탁연구과제', role: '공동연구원' },
+  { period: '2017.12 – 2019.02', title: '머신러닝 기반의 의료 데이터 분석 연구', funder: '서울성모병원 정신건강의학과', role: '공동연구책임자' },
+  { period: '2017.12 – 2018.11', title: '클라우드 기반의 인공지능 검색광고 플랫폼 개발', funder: '중소기업청 산학연협력기술개발사업', role: '연구책임자' },
+];
 ---
 <Base title="Research">
   <section class="block">
@@ -59,6 +91,42 @@ const pillars = [
           )}
         </div>
       ))}
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><i>05</i> / Projects</span>
+        <h2>Funded R&amp;D projects</h2>
+        <p>정부·산업체 연구과제 수행 실적입니다.</p>
+      </div>
+
+      <h3 style="margin-bottom:6px;">On-going</h3>
+      <div class="proj-list" style="margin-bottom:48px;">
+        {ongoing.map((p) => (
+          <article class="proj">
+            <div class="period">{p.period}</div>
+            <div>
+              <div class="title">{p.title}</div>
+              <div class="meta">{p.funder} · {p.role}</div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <h3 style="margin-bottom:6px;">Completed</h3>
+      <div class="proj-list">
+        {completed.map((p) => (
+          <article class="proj">
+            <div class="period">{p.period}</div>
+            <div>
+              <div class="title">{p.title}</div>
+              <div class="meta">{p.funder} · {p.role}</div>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 </Base>
