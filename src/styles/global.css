@@ -38,6 +38,9 @@ body {
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  /* 한글이 단어 중간에서 잘리지 않도록 전 페이지 공통 적용 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 ::selection { background: var(--accent); color: #fff; }
