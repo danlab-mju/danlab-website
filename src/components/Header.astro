@@ -1,0 +1,27 @@
+---
+import Logo from './Logo.astro';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const items = [
+  ['/', 'Home'],
+  ['/news', "What's New"],
+  ['/research', 'Research'],
+  ['/team', 'Team'],
+  ['/publications', 'Publications'],
+  ['/awards', 'Awards'],
+  ['/photos', 'Photos'],
+  ['/media', 'Media'],
+];
+---
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand">
+      <Logo />
+      <span class="brand-name">DAN Lab<small>DISTRIBUTED AI &amp; NETWORKED ROBOTICS</small></span>
+    </a>
+    <nav class="main-nav" aria-label="주 메뉴">
+      {items.map(([href, label]) => (
+        <a href={href} aria-current={path === (href === '/' ? '/' : href) ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
+  </div>
+</header>

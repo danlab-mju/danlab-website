@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+// 영상 출처: YouTube @danlab. 채널
+const recaps = [
+  { id: 'tVOMDBJJLWs', title: 'DAN Lab. 2025 연구실 결산' },
+  { id: 'DevHZKpG_40', title: 'DAN Lab. 2024 연구실 결산' },
+  { id: 'k92Nrqpiu28', title: 'DAN Lab. 2022 연구실 결산' },
+];
+const demos = [
+  { id: 'zWAYyao4o7Q', title: 'XR 가상인터페이스 화면 녹화' },
+  { id: '0JohQa2yBZo', title: '딥러닝 알고리즘을 이용한 특정 동영상 컨텐츠 내 포즈인식' },
+  { id: '65QD1KnsteY', title: '핸드라이팅 시연 — 수기 입력' },
+  { id: 'ALyl1wIXsNI', title: '핸드라이팅 시연 — 프린트 입력' },
+  { id: 'X0vv13BDfeg', title: '모형자동차 주행' },
+];
+const press = [
+  { when: '2023.06', title: '데이터 분석 및 네트워킹 연구실 — 명지대학교 연구실 소개', link: 'https://www.mju.ac.kr/bbs/mjuresearch/1370/200672/artclView.do' },
+  { when: '2020.09', title: 'IT 강국으로 유학 온 제3국의 학생들 — 한국통신학회 정보광장 (박현희 교수 기고)', link: 'https://www.kics.or.kr/html/?pmode=BInformationSquare&page=1&smode=view&seq=2814' },
+];
+---
+<Base title="Media">
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Media &amp; Videos</span>
+        <h2>Lab videos</h2>
+        <p>연구실 연간 결산 영상 — <a href="https://www.youtube.com/@danlab." target="_blank" rel="noopener">YouTube 채널 ↗</a></p>
+      </div>
+      <div class="video-grid">
+        {recaps.map((v) => (
+          <figure class="video-card">
+            <iframe src={`https://www.youtube.com/embed/${v.id}`} title={v.title} loading="lazy" allowfullscreen></iframe>
+            <figcaption>{v.title}</figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div class="section-head" style="margin-top:56px;">
+        <h2>Research demos</h2>
+      </div>
+      <div class="video-grid">
+        {demos.map((v) => (
+          <figure class="video-card">
+            <iframe src={`https://www.youtube.com/embed/${v.id}`} title={v.title} loading="lazy" allowfullscreen></iframe>
+            <figcaption>{v.title}</figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div class="section-head" style="margin-top:56px;">
+        <h2>Press &amp; features</h2>
+      </div>
+      <div class="press-list">
+        {press.map((p) => (
+          <article class="press-item">
+            <span class="when">{p.when}</span>
+            <a href={p.link} target="_blank" rel="noopener">{p.title} ↗</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

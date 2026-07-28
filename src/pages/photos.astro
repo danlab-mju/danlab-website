@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import photos from '../data/photos.json';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// 기존 danlab.mju.ac.kr(Google Sites) Photos 페이지에서 백업한 사진들.
+// 원본은 [홈페이지]/photos-backup/, 사진 추가는 public/photos/에 파일을 넣고 src/data/photos.json에 항목 추가.
+const years = [...new Set(photos.map((p) => p.year))].sort((a, b) => b - a);
+---
+<Base title="Photos">
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Photos</span>
+        <h2>Lab Life</h2>
+        <p>학회 발표, 수상, 연구실 행사의 순간들.</p>
+      </div>
+      {years.map((y) => (
+        <div>
+          <h3 class="photo-year">{y}</h3>
+          <div class="photo-grid">
+            {photos.filter((p) => p.year === y).map((p) => (
+              <figure class="photo-card">
+                <img src={`${base}/photos/${p.file}`} alt={p.caption || `DAN Lab ${y}`} loading="lazy" />
+                {p.caption && <figcaption>{p.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

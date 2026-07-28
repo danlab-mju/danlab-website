@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const all = (await getCollection('publications')).sort(
+  (a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id)
+);
+const journals = all.filter((p) => p.data.type === 'journal');
+const conferences = all.filter((p) => p.data.type === 'conference');
+---
+<Base title="Publications">
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Publications</span>
+        <h2>Journal papers</h2>
+        <p>논문 추가는 <code>src/content/publications/</code>에 마크다운 파일 하나를 만들면 됩니다.</p>
+      </div>
+      <div class="pub-list">
+        {journals.map((p) => (
+          <article class="pub">
+            <div class="year">{p.data.year}</div>
+            <div>
+              <div class="title">{p.data.link ? <a href={p.data.link}>{p.data.title}</a> : p.data.title}</div>
+              <div class="authors">{p.data.authors}</div>
+              <div class="venue">{p.data.venue}</div>
+              {p.data.note && <div class="note">{p.data.note}</div>}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="section-head" style="margin-top:56px;">
+        <h2>Conference papers</h2>
+      </div>
+      <div class="pub-list">
+        {conferences.map((p) => (
+          <article class="pub">
+            <div class="year">{p.data.year}</div>
+            <div>
+              <div class="title">{p.data.link ? <a href={p.data.link}>{p.data.title}</a> : p.data.title}</div>
+              <div class="authors">{p.data.authors}</div>
+              <div class="venue">{p.data.venue}</div>
+              {p.data.note && <div class="note">{p.data.note}</div>}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

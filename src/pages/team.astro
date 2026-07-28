@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// 사진: public/team/ (기존 danlab.mju.ac.kr Google Sites에서 백업)
+// 김덕중·김영훈: 기존 사이트에도 사진·연구 주제 정보 없음 (산학 과정, u1gis)
+const phd = [
+  { name: '김덕중', en: 'Deokjung Kim', interest: '', since: '2024.09–', email: 'djkim@u1gis.com' },
+  { name: '김영훈', en: 'Younghoon Kim', interest: '', since: '2024.09–', email: 'yhkim@u1gis.com' },
+];
+const ms = [
+  { name: '임채윤', en: 'Chaeyun Lim', interest: '3D perception · point cloud', since: '2025.03–', email: 'dlacodbs0627@mju.ac.kr', site: 'https://chaedoll.github.io', photo: 'chaeyun-lim' },
+  { name: '김서현', en: 'Seohyeon Kim', interest: 'Industrial AI · defect analysis', since: '2025.03–', email: 'seohy2on@mju.ac.kr', photo: 'seohyeon-kim' },
+  { name: '장소현', en: 'Sohyeon Jang', interest: 'Camouflaged object detection · explainable AI (XAI)', since: '2026.02–', email: 'jangso6593@mju.ac.kr', photo: 'sohyeon-jang' },
+  { name: '장하민', en: 'Hamin Jang', interest: 'Sign language recognition · multi-encoder', since: '2026.03–', email: 'hmjang@mju.ac.kr', photo: 'hamin-jang' },
+];
+const alumni = [
+  { name: '김건희 (M.S. 2025)', en: 'Geonhui Kim', interest: 'Federated learning', now: 'KISTI', site: 'https://sites.google.com/view/geonhui-kim/home-kr', photo: 'geonhui-kim' },
+  { name: '김환 (M.S. 2025)', en: 'Hwan Kim', interest: 'Federated learning', photo: 'hwan-kim' },
+  { name: '김병찬 (M.S. 2024)', en: 'Byungchan Kim', interest: 'Wi-Fi 7 MLO', now: 'ETRI', photo: 'byungchan-kim' },
+  { name: '김지나 (M.S. 2024)', en: 'Jeena Kim', interest: 'Random access optimization', now: 'Ericsson-LG', site: 'https://github.com/JeenaKim99', photo: 'jeena-kim' },
+  { name: '김형빈 (M.S. 2023)', en: 'Hyungbin Kim', interest: 'Federated learning · digital health', now: 'Korea Univ. Ph.D. program', site: 'https://hyungbinklm.tistory.com', photo: 'hyungbin-kim' },
+  { name: '우기문 (M.S. 2023)', en: 'Gimoon Woo', interest: 'Wireless communications', now: 'Hyundai Motor Group', site: 'https://gmwoo.tistory.com', photo: 'gimoon-woo' },
+];
+const initials = (en) => en.split(' ').map((w) => w[0]).join('');
+---
+<Base title="Team">
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Team</span>
+        <h2>People</h2>
+      </div>
+
+      <div class="prof-card">
+        <img class="prof-photo" src={`${base}/team/hyunhee-park.jpg`} alt="Hyunhee Park" />
+        <div>
+          <span class="eyebrow" style="margin-bottom:4px;">Director</span>
+          <div style="font-family:var(--font-display);font-weight:700;font-size:1.3rem;">Hyunhee Park 박현희</div>
+          <div class="muted">Professor, Myongji University</div>
+          <div class="muted" style="font-size:0.9rem;">
+            Federated learning · wireless communications · physical AI · IEEE 802 standardization
+          </div>
+          <div style="margin-top:6px;"><a href="mailto:hhpark@mju.ac.kr">hhpark [at] mju.ac.kr</a></div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:14px;">Ph.D. students</h3>
+      <div class="member-grid" style="margin-bottom:36px;">
+        {phd.map((m) => (
+          <div class="member">
+            {m.photo
+              ? <img class="photo" src={`${base}/team/${m.photo}.jpg`} alt={m.en} />
+              : <div class="photo photo-fallback">{initials(m.en)}</div>}
+            <span class="role">Ph.D. Student · {m.since}</span>
+            <div class="name">{m.name} <span class="en">{m.en}</span></div>
+            {m.interest && <div class="interest">{m.interest}</div>}
+            <div class="links">
+              {m.email && <a href={`mailto:${m.email}`}>Email</a>}
+              {m.site && <a href={m.site} target="_blank" rel="noopener">Website ↗</a>}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 style="margin-bottom:14px;">M.S. students</h3>
+      <div class="member-grid" style="margin-bottom:36px;">
+        {ms.map((m) => (
+          <div class="member">
+            {m.photo
+              ? <img class="photo" src={`${base}/team/${m.photo}.jpg`} alt={m.en} />
+              : <div class="photo photo-fallback">{initials(m.en)}</div>}
+            <span class="role">M.S. Student · {m.since}</span>
+            <div class="name">{m.name} <span class="en">{m.en}</span></div>
+            {m.interest && <div class="interest">{m.interest}</div>}
+            <div class="links">
+              {m.email && <a href={`mailto:${m.email}`}>Email</a>}
+              {m.site && <a href={m.site} target="_blank" rel="noopener">Website ↗</a>}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 style="margin-bottom:14px;">Alumni</h3>
+      <div class="member-grid">
+        {alumni.map((m) => (
+          <div class="member">
+            {m.photo
+              ? <img class="photo" src={`${base}/team/${m.photo}.jpg`} alt={m.en} />
+              : <div class="photo photo-fallback">{initials(m.en)}</div>}
+            <span class="role">Alumni</span>
+            <div class="name">{m.name} <span class="en">{m.en}</span></div>
+            {m.interest && <div class="interest">{m.interest}</div>}
+            {m.now && <div class="interest now">Now at {m.now}</div>}
+            <div class="links">
+              {m.site && <a href={m.site} target="_blank" rel="noopener">Website ↗</a>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
