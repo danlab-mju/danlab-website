@@ -12,7 +12,7 @@ const years = [...new Set(photos.map((p) => p.year))].sort((a, b) => b - a);
       <div class="section-head">
         <span class="eyebrow"><i>01</i> / Photos</span>
         <h2>Lab Life</h2>
-        <p>학회 발표, 수상, 연구실 행사의 순간들.</p>
+        <p>학회 발표, 수상, 연구실 행사의 순간들. 사진을 클릭하면 크게 볼 수 있습니다.</p>
       </div>
       {years.map((y) => (
         <div>
@@ -20,7 +20,15 @@ const years = [...new Set(photos.map((p) => p.year))].sort((a, b) => b - a);
           <div class="photo-grid">
             {photos.filter((p) => p.year === y).map((p) => (
               <figure class="photo-card">
-                <img src={`${base}/photos/${p.file}`} alt={p.caption || `DAN Lab ${y}`} loading="lazy" />
+                <button
+                  class="photo-zoom"
+                  type="button"
+                  data-src={`${base}/photos/${p.file}`}
+                  data-caption={p.caption || `DAN Lab ${y}`}
+                  aria-label="사진 크게 보기"
+                >
+                  <img src={`${base}/photos/${p.file}`} alt={p.caption || `DAN Lab ${y}`} loading="lazy" />
+                </button>
                 {p.caption && <figcaption>{p.caption}</figcaption>}
               </figure>
             ))}
@@ -29,4 +37,26 @@ const years = [...new Set(photos.map((p) => p.year))].sort((a, b) => b - a);
       ))}
     </div>
   </section>
+
+  <dialog class="lightbox" id="lightbox">
+    <figure>
+      <img id="lightbox-img" src="" alt="" />
+      <figcaption id="lightbox-cap"></figcaption>
+    </figure>
+  </dialog>
+
+  <script>
+    const dlg = document.getElementById('lightbox') as HTMLDialogElement;
+    const img = document.getElementById('lightbox-img') as HTMLImageElement;
+    const cap = document.getElementById('lightbox-cap') as HTMLElement;
+    document.querySelectorAll<HTMLButtonElement>('.photo-zoom').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        img.src = btn.dataset.src ?? '';
+        img.alt = btn.dataset.caption ?? '';
+        cap.textContent = btn.dataset.caption ?? '';
+        dlg.showModal();
+      });
+    });
+    dlg.addEventListener('click', () => dlg.close());
+  </script>
 </Base>
