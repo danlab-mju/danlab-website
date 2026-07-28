@@ -1,6 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import BlacksandLogo from './BlacksandLogo.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -27,13 +28,13 @@ const year = new Date().getFullYear();
         <div class="brand-desc">Distributed AI &amp; Networked Robotics · Myongji University</div>
       </div>
     </div>
-    <div class="footer-brand">
+    <a class="footer-brand" href={`${base}/blacksand`}>
       <BlacksandLogo />
       <div>
-        <div class="brand-title">Blacksand Labs</div>
+        <div class="brand-title">Blacksand Labs <span class="brand-ko">(주)블랙샌드랩스</span></div>
         <div class="brand-desc">AI 반도체 · NPU 추론 · 객체탐지 · 영상분석 · 이종 로봇 피지컬 AI — SW/HW</div>
       </div>
-    </div>
+    </a>
   </div>
   <div class="wrap fine">© {year} Distributed AI and Networked Robotics Lab. All rights reserved.</div>
 </footer>

@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import BlacksandLogo from '../components/BlacksandLogo.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const areas = [
+  {
+    tag: 'AI Semiconductor',
+    title: 'AI 반도체',
+    desc: 'NPU 기반 엣지 AI 시스템을 위한 반도체 응용 설계와 소프트웨어 스택을 개발합니다. 국산 AI 반도체 생태계 위에서 비전인식 SDK를 만들어 온 경험이 출발점입니다.',
+  },
+  {
+    tag: 'NPU Inference',
+    title: '온디바이스 NPU 추론',
+    desc: '모델 경량화와 컴파일 최적화로 소형 엣지 디바이스에서 실시간 AI 추론을 구현합니다. 클라우드 없이 현장에서 바로 동작하는 지능을 지향합니다.',
+  },
+  {
+    tag: 'Vision AI',
+    title: '객체탐지 · 영상분석',
+    desc: '산업 현장과 인프라 영상에서 객체를 탐지하고 이상상황을 판단하는 비전 AI를 만듭니다. 검사 장비의 OCR·결함 검출부터 도로 영상 분석까지 적용 범위를 넓히고 있습니다.',
+  },
+  {
+    tag: 'Physical AI',
+    title: '이종 로봇 피지컬 AI',
+    desc: '종류가 다른 로봇들이 하나의 시스템으로 함께 인지하고 동작하는 피지컬 AI를 통합합니다. 연구실에서 검증된 분산 AI 기술을 실제 현장의 로봇으로 가져갑니다.',
+  },
+];
+---
+<Base title="Blacksand Labs" description="(주)블랙샌드랩스 — AI 반도체, NPU 추론, 객체탐지·영상분석, 이종 로봇 피지컬 AI를 만드는 SW/HW 스타트업">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i>01</i> / Startup · Spin-off</span>
+        <h1>Blacksand Labs</h1>
+        <p class="tagline">— research, settled into products</p>
+        <p class="lede">
+          (주)블랙샌드랩스는 DAN Lab의 연구를 제품으로 잇는 SW/HW 스타트업입니다.
+          AI 반도체와 NPU 추론, 객체탐지·영상분석, 그리고 이종 로봇 피지컬 AI —
+          연구실에서 검증한 기술을 현장에서 동작하는 시스템으로 만듭니다.
+        </p>
+        <p class="ko-name">주식회사 블랙샌드랩스</p>
+        <div class="btn-row">
+          <a class="btn" href="mailto:hhpark@mju.ac.kr">Contact us</a>
+        </div>
+      </div>
+      <aside class="hero-startup">
+        <BlacksandLogo />
+      </aside>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><i>02</i> / What We Build</span>
+        <h2>SW와 HW, 한 줄로 잇습니다</h2>
+        <p>반도체 위의 추론부터 현장의 로봇까지 — 네 가지 축을 하나의 제품 라인으로 만듭니다.</p>
+      </div>
+      <div class="areas">
+        {areas.map((a) => (
+          <div class="area">
+            <span class="tag">{a.tag}</span>
+            <h3>{a.title}</h3>
+            <p>{a.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><i>03</i> / Roots</span>
+        <h2>DAN Lab에서 시작했습니다</h2>
+        <p>
+          블랙샌드랩스는 명지대학교 DAN Lab(박현희 교수)의 창업 기업입니다.
+          연합학습, 3D 인지, 온디바이스 NPU 추론, 무선 표준 — 연구실이 쌓아 온
+          기술이 회사의 기반이며, 연구와 제품이 서로를 끌어올리는 구조를 지향합니다.
+        </p>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href={`${base}/research`}>DAN Lab research</a>
+        <a class="btn" href={`${base}/publications`}>Publications</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><i>04</i> / Contact</span>
+        <h2>함께 만들 것이 있다면</h2>
+        <p>
+          제품 협력, 공동 연구, 투자 문의 모두 환영합니다.
+          <a href="mailto:hhpark@mju.ac.kr">hhpark [at] mju.ac.kr</a> 로 연락 주세요.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

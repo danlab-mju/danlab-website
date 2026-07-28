@@ -164,6 +164,11 @@ nav.main-nav a[aria-current="page"] { color: var(--accent); }
   font-family: var(--font-display); font-weight: 700;
   font-size: 1.6rem; letter-spacing: -0.02em;
 }
+.hero-startup .startup-ko {
+  font-family: var(--font-mono); font-size: 0.78rem;
+  color: var(--slate); margin-top: -8px;
+}
+.hero-startup .btn { font-size: 0.92rem; }
 .hero-startup p { margin: 0; font-size: 0.92rem; color: var(--slate); max-width: 36ch; word-break: keep-all; }
 .hero-startup .startup-tags {
   font-family: var(--font-mono); font-size: 0.7rem;
@@ -201,6 +206,27 @@ section.block:last-of-type { border-bottom: none; }
 .pillar p { margin: 0; font-size: 0.92rem; color: var(--slate); }
 .pillar ul { margin: 4px 0 0; padding-left: 18px; font-size: 0.88rem; color: var(--ink); }
 .pillar li { margin-bottom: 4px; }
+
+/* ---- blacksand: capability areas ---- */
+.areas { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); }
+.area {
+  padding: 30px 28px;
+  border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.area:nth-child(odd) { border-right: 1px solid var(--line); }
+.area:last-child, .area:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+.area .tag {
+  font-family: var(--font-mono); font-size: 0.7rem;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--accent);
+}
+.area p { margin: 0; font-size: 0.92rem; color: var(--slate); word-break: keep-all; }
+@media (max-width: 700px) {
+  .areas { grid-template-columns: 1fr; }
+  .area:nth-child(odd) { border-right: none; }
+  .area:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--line); }
+}
 
 /* ---- publications ---- */
 .pub-list { display: flex; flex-direction: column; gap: 0; }
@@ -383,9 +409,15 @@ section.block:last-of-type { border-bottom: none; }
   margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line);
 }
 .footer-brand { display: flex; align-items: center; gap: 12px; }
+a.footer-brand:hover { text-decoration: none; }
+a.footer-brand:hover .brand-title { color: var(--accent); }
 .footer-brand .brand-title {
   font-family: var(--font-display); font-weight: 700; color: var(--ink);
   font-size: 0.95rem; letter-spacing: -0.01em;
+}
+.footer-brand .brand-ko {
+  font-family: var(--font-mono); font-weight: 400;
+  font-size: 0.7rem; color: var(--slate); margin-left: 6px;
 }
 .footer-brand .brand-desc {
   font-family: var(--font-mono); font-size: 0.68rem;
