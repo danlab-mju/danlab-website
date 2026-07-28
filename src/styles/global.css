@@ -149,8 +149,33 @@ nav.main-nav a[aria-current="page"] { color: var(--accent); }
 .btn:hover { text-decoration: none; color: var(--accent); }
 
 .node-art { width: 100%; height: auto; display: block; }
+
+/* hero side: Blacksand Labs spin-off feature */
+.hero-startup { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.hero-startup svg { width: 104px; height: 104px; }
+.hero-startup .startup-label {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--accent);
+}
+.hero-startup .startup-label::before { content: '[ '; }
+.hero-startup .startup-label::after { content: ' ]'; }
+.hero-startup .startup-name {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1.6rem; letter-spacing: -0.02em;
+}
+.hero-startup p { margin: 0; font-size: 0.92rem; color: var(--slate); max-width: 36ch; word-break: keep-all; }
+.hero-startup .startup-tags {
+  font-family: var(--font-mono); font-size: 0.7rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--ink); line-height: 2;
+  border-top: 1px solid var(--line); padding-top: 12px;
+}
 @media (min-width: 861px) {
-  .hero-grid .node-art { border-left: 1px solid var(--line); padding-left: 48px; }
+  .hero-grid .hero-startup { border-left: 1px solid var(--line); padding-left: 48px; }
+}
+@media (max-width: 860px) {
+  .hero-grid .hero-startup { border-top: 1px solid var(--line); padding-top: 28px; }
 }
 
 /* ---- sections ---- */

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import NodeArt from '../components/NodeArt.astro';
+import BlacksandLogo from '../components/BlacksandLogo.astro';
 import { getCollection } from 'astro:content';
 
 const pubs = (await getCollection('publications'))
@@ -30,7 +30,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <a class="btn" href="mailto:hhpark@mju.ac.kr">Join the lab</a>
         </div>
       </div>
-      <NodeArt />
+      <aside class="hero-startup">
+        <span class="startup-label">Startup · Spin-off</span>
+        <BlacksandLogo />
+        <div class="startup-name">Blacksand Labs</div>
+        <p>
+          DAN Lab의 연구를 제품으로 잇는 SW/HW 스타트업.
+          AI 반도체와 NPU 추론, 객체탐지·영상분석, 이종 로봇
+          피지컬 AI를 만듭니다.
+        </p>
+        <div class="startup-tags">
+          AI Semiconductor<br />
+          NPU Inference<br />
+          Object Detection · Video Analytics<br />
+          Heterogeneous-Robot Physical AI
+        </div>
+      </aside>
     </div>
   </section>
 
