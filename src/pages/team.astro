@@ -4,11 +4,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // 사진: public/team/ (기존 danlab.mju.ac.kr Google Sites에서 백업)
 // 김덕중·김영훈: 기존 사이트에도 사진·연구 주제 정보 없음 (산학 과정, u1gis)
 const phd = [
+  { name: '김지하', en: 'Jiha Kim', course: 'Ph.D./M.S. Combined', interest: 'Security systems · AI/ML prediction · image classification', since: '2020.09–', email: 'yaki5896@mju.ac.kr', site: 'https://yaki-toki.github.io/', photo: 'jiha-kim' },
+  { name: '김용호', en: 'Yongho Kim', course: 'Ph.D./M.S. Combined', interest: 'AI/ML modeling · image classification · intelligent systems', since: '2021.03–', email: 'yhkim98@mju.ac.kr', site: 'https://kyh980909.github.io', photo: 'yongho-kim' },
   { name: '김덕중', en: 'Deokjung Kim', interest: '', since: '2024.09–', email: 'djkim@u1gis.com' },
   { name: '김영훈', en: 'Younghoon Kim', interest: '', since: '2024.09–', email: 'yhkim@u1gis.com' },
+  { name: '임채윤', en: 'Chaeyun Lim', course: 'Ph.D./M.S. Combined', interest: '3D computer vision · point cloud · VR/AR', since: '2025.03–', email: 'dlacodbs0627@mju.ac.kr', site: 'https://chaedoll.github.io', photo: 'chaeyun-lim' },
 ];
 const ms = [
-  { name: '임채윤', en: 'Chaeyun Lim', interest: '3D perception · point cloud', since: '2025.03–', email: 'dlacodbs0627@mju.ac.kr', site: 'https://chaedoll.github.io', photo: 'chaeyun-lim' },
   { name: '김서현', en: 'Seohyeon Kim', interest: 'Industrial AI · defect analysis', since: '2025.03–', email: 'seohy2on@mju.ac.kr', photo: 'seohyeon-kim' },
   { name: '장소현', en: 'Sohyeon Jang', interest: 'Camouflaged object detection · explainable AI (XAI)', since: '2026.02–', email: 'jangso6593@mju.ac.kr', photo: 'sohyeon-jang' },
   { name: '장하민', en: 'Hamin Jang', interest: 'Sign language recognition · multi-encoder', since: '2026.03–', email: 'hmjang@mju.ac.kr', photo: 'hamin-jang' },
@@ -51,7 +53,7 @@ const initials = (en) => en.split(' ').map((w) => w[0]).join('');
             {m.photo
               ? <img class="photo" src={`${base}/team/${m.photo}.jpg`} alt={m.en} />
               : <div class="photo photo-fallback">{initials(m.en)}</div>}
-            <span class="role">Ph.D. Student · {m.since}</span>
+            <span class="role">{m.course ?? 'Ph.D. Student'} · {m.since}</span>
             <div class="name">{m.name} <span class="en">{m.en}</span></div>
             {m.interest && <div class="interest">{m.interest}</div>}
             <div class="links">
