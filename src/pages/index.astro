@@ -9,6 +9,7 @@ const pubs = (await getCollection('publications'))
 const news = (await getCollection('news'))
   .sort((a, b) => b.data.sort - a.data.sort)
   .slice(0, 6);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Base title="Home">
   <section class="hero">
@@ -24,7 +25,7 @@ const news = (await getCollection('news'))
         </p>
         <p class="ko-name">분산 AI 및 네트워크 로보틱스 연구실</p>
         <div class="btn-row">
-          <a class="btn primary" href="/research">Our research</a>
+          <a class="btn primary" href={`${base}/research`}>Our research</a>
           <a class="btn" href="mailto:hhpark@mju.ac.kr">Join the lab</a>
         </div>
       </div>
@@ -92,7 +93,7 @@ const news = (await getCollection('news'))
           </article>
         ))}
       </div>
-      <p style="margin-top:20px;"><a href="/publications">All publications →</a></p>
+      <p style="margin-top:20px;"><a href={`${base}/publications`}>All publications →</a></p>
     </div>
   </section>
 
@@ -110,7 +111,7 @@ const news = (await getCollection('news'))
           </div>
         ))}
       </div>
-      <p style="margin-top:20px;"><a href="/news">More news →</a></p>
+      <p style="margin-top:20px;"><a href={`${base}/news`}>More news →</a></p>
     </div>
   </section>
 
