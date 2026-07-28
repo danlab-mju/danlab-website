@@ -2,4 +2,5 @@
 date: "2024.02"
 sort: 202402
 body: "연구과제 선정 — 2024년 표준특허 전략지원 사업 (한국특허전략개발원, PI)"
+en: "New project — 2024 Standard Patent Strategy Support Program (KISTA, PI)"
 ---

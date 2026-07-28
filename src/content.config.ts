@@ -21,6 +21,7 @@ const news = defineCollection({
     date: z.string(), // YYYY.MM 표기 그대로 사용
     sort: z.number(), // 정렬 키 (YYYYMM)
     body: z.string(),
+    en: z.string().optional(), // 영문 병기 (해외 방문자용)
   }),
 });
 

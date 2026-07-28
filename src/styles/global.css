@@ -298,6 +298,7 @@ section.block:last-of-type { border-bottom: none; }
 .news-item:last-child { border-bottom: none; }
 .news-item .date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--slate); padding-top: 2px; }
 .news-item .body { font-size: 0.95rem; }
+.news-item .body-en { font-size: 0.85rem; color: var(--slate); margin-top: 2px; }
 
 /* ---- awards ---- */
 .award-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); }

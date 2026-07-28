@@ -14,7 +14,10 @@ const news = (await getCollection('news')).sort((a, b) => b.data.sort - a.data.s
         {news.map((n) => (
           <div class="news-item">
             <div class="date">{n.data.date}</div>
-            <div class="body">{n.data.body}</div>
+            <div class="body">
+              {n.data.body}
+              {n.data.en && <div class="body-en">{n.data.en}</div>}
+            </div>
           </div>
         ))}
       </div>

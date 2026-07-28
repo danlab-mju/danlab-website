@@ -2,4 +2,5 @@
 date: "2023.11"
 sort: 202311
 body: "한국통신학회 공로상 수상 (박현희 교수)"
+en: "Prof. Hyunhee Park received the KICS Service Award"
 ---
