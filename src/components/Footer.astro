@@ -1,4 +1,6 @@
 ---
+import Logo from './Logo.astro';
+import BlacksandLogo from './BlacksandLogo.astro';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -15,6 +17,22 @@ const year = new Date().getFullYear();
       <div class="lab-name">Contact</div>
       <div>Lab: <a href="mailto:danlab5502@gmail.com">danlab5502 [at] gmail.com</a></div>
       <div>Prof. Hyunhee Park: <a href="mailto:hhpark@mju.ac.kr">hhpark [at] mju.ac.kr</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-brands">
+    <div class="footer-brand">
+      <Logo />
+      <div>
+        <div class="brand-title">DAN Lab</div>
+        <div class="brand-desc">Distributed AI &amp; Networked Robotics · Myongji University</div>
+      </div>
+    </div>
+    <div class="footer-brand">
+      <BlacksandLogo />
+      <div>
+        <div class="brand-title">Blacksand Labs</div>
+        <div class="brand-desc">AI 반도체 · NPU 추론 · 객체탐지 · 영상분석 · 이종 로봇 피지컬 AI — SW/HW</div>
+      </div>
     </div>
   </div>
   <div class="wrap fine">© {year} Distributed AI and Networked Robotics Lab. All rights reserved.</div>

@@ -313,6 +313,19 @@ section.block:last-of-type { border-bottom: none; }
   font-family: var(--font-display); font-weight: 700; color: var(--ink);
   font-size: 1.02rem; letter-spacing: -0.01em; margin-bottom: 8px;
 }
+.footer-brands {
+  display: flex; flex-wrap: wrap; gap: 28px 56px;
+  margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line);
+}
+.footer-brand { display: flex; align-items: center; gap: 12px; }
+.footer-brand .brand-title {
+  font-family: var(--font-display); font-weight: 700; color: var(--ink);
+  font-size: 0.95rem; letter-spacing: -0.01em;
+}
+.footer-brand .brand-desc {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  letter-spacing: 0.02em; color: var(--slate);
+}
 .site-footer .fine {
   margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line);
   font-family: var(--font-mono); font-size: 0.68rem;
