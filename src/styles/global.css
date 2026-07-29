@@ -326,7 +326,7 @@ section.block:last-of-type { border-bottom: none; }
   border: 1px solid var(--line);
   padding: 22px;
 }
-.member .role { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+.member .role, .prof-card .role { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
 .member .name { font-weight: 600; font-size: 1.02rem; margin-top: 6px; letter-spacing: -0.01em; }
 .member .name .en { font-weight: 400; font-size: 0.85rem; color: var(--slate); }
 .member .interest { font-size: 0.85rem; color: var(--slate); margin-top: 4px; }
