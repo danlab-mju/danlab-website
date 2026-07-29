@@ -288,6 +288,7 @@ section.block:last-of-type { border-bottom: none; }
   color: var(--slate); padding-top: 3px;
 }
 .proj .title { font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; }
+.proj .title-en { font-size: 0.84rem; color: var(--slate); margin-top: 2px; }
 .proj .meta {
   font-family: var(--font-mono); font-size: 0.72rem;
   color: var(--accent); margin-top: 5px;
