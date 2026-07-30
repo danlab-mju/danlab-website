@@ -256,6 +256,8 @@ section.block:last-of-type { border-bottom: none; }
   color: var(--slate); padding-top: 3px;
 }
 .pub .title { font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+.pub .title a { color: var(--ink); }
+.pub .title a:hover { color: var(--accent); text-decoration: none; }
 .pub .authors { font-size: 0.88rem; color: var(--slate); margin-top: 2px; }
 .pub .venue {
   font-family: var(--font-mono); font-size: 0.76rem;
