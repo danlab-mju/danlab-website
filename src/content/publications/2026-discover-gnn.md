@@ -1,7 +1,7 @@
 ---
 title: "Noise-Adaptive Correction for Robust Graph Neural Networks in Trusted Graph Computing"
 authors: "Hwan Kim, Jiha Kim, Seunghyun Park, Hyunhee Park"
-venue: "Discover Computing, vol. 29, no. 327"
+venue: "Discover Computing (Springer), vol. 29, art. no. 327"
 year: 2026
 type: journal
 note: "SCIE · Open Access · June 2026"
