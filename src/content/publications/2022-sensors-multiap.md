@@ -5,4 +5,5 @@ venue: "MDPI Sensors"
 year: 2022
 type: journal
 note: "SCI · December 2022"
+link: "https://doi.org/10.3390/s22249776"
 ---

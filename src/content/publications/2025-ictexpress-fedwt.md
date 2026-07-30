@@ -6,4 +6,5 @@ year: 2025
 type: journal
 pillar: distributed-ai
 note: "NRF No. 2022R1A2C2005705, RS-2024-00394475"
+link: "https://doi.org/10.1016/j.icte.2024.12.005"
 ---

@@ -5,4 +5,5 @@ venue: "한국통신학회논문지 (Journal of KICS)"
 year: 2022
 type: journal
 note: "KCI · August 2022"
+link: "https://doi.org/10.7840/kics.2022.47.8.1144"
 ---

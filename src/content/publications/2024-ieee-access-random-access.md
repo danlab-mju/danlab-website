@@ -5,4 +5,5 @@ venue: "IEEE Access, vol. 12, pp. 55033-55050"
 year: 2024
 type: journal
 pillar: on-device
+link: "https://doi.org/10.1109/ACCESS.2024.3388498"
 ---

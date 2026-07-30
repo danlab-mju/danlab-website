@@ -5,4 +5,5 @@ venue: "Future Generation Computer Systems"
 year: 2020
 type: journal
 note: "SCIE · January 2020"
+link: "https://doi.org/10.1016/j.future.2020.02.040"
 ---

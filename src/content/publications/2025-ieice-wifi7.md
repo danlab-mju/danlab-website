@@ -6,4 +6,5 @@ year: 2025
 type: journal
 pillar: on-device
 note: "NRF No. 2022R1A2C2005705"
+link: "https://doi.org/10.23919/transcom.2024EBP3136"
 ---

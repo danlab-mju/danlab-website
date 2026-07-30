@@ -5,4 +5,5 @@ venue: "Sensors and Materials"
 year: 2018
 type: journal
 note: "SCIE · May 2018"
+link: "https://doi.org/10.18494/SAM.2018.1961"
 ---

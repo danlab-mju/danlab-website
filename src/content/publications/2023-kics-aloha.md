@@ -5,4 +5,5 @@ venue: "한국통신학회논문지 (Journal of KICS)"
 year: 2023
 type: journal
 note: "KCI · March 2023"
+link: "https://doi.org/10.7840/kics.2023.48.3.350"
 ---

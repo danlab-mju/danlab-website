@@ -6,4 +6,5 @@ year: 2024
 type: journal
 pillar: distributed-ai
 note: "SCI · October 2024 · NRF No. 2022R1A2C2005705"
+link: "https://doi.org/10.1049/ell2.70063"
 ---

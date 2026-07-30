@@ -5,4 +5,5 @@ venue: "ICT Express"
 year: 2022
 type: journal
 note: "SCI · December 2022"
+link: "https://doi.org/10.1016/j.icte.2021.12.014"
 ---

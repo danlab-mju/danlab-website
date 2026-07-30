@@ -6,4 +6,5 @@ year: 2023
 type: journal
 pillar: distributed-ai
 note: "SCI · April 2023 · NRF No. 2022R1A2C2005705, IITP No. 2021-0-00368"
+link: "https://doi.org/10.1109/ACCESS.2023.3264584"
 ---
