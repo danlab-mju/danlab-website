@@ -6,6 +6,6 @@
   <line x1="16" y1="11" x2="26" y2="7" stroke="#8a897f" stroke-width="1.3"/>
   <circle cx="8" cy="24" r="3.4" fill="#f2f1eb"/>
   <circle cx="24" cy="24" r="3.4" fill="#f2f1eb"/>
-  <circle cx="16" cy="11" r="3.4" fill="#1d39f5"/>
+  <rect x="12.4" y="7.4" width="7.2" height="7.2" rx="1.6" fill="#1d39f5"/>
   <circle cx="27" cy="6.5" r="2" fill="#f2f1eb"/>
 </svg>
