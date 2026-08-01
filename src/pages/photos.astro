@@ -4,7 +4,9 @@ import photos from '../data/photos.json';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // 기존 danlab.mju.ac.kr(Google Sites) Photos 페이지에서 백업한 사진들.
 // 원본은 [홈페이지]/photos-backup/, 사진 추가는 public/photos/에 파일을 넣고 src/data/photos.json에 항목 추가.
-const years = [...new Set(photos.map((p) => p.year))].sort((a, b) => b - a);
+const equipment = photos.filter((p) => p.equipment);
+const life = photos.filter((p) => !p.equipment);
+const years = [...new Set(life.map((p) => p.year))].sort((a, b) => b - a);
 ---
 <Base title="Photos">
   <section class="block">
@@ -18,7 +20,7 @@ const years = [...new Set(photos.map((p) => p.year))].sort((a, b) => b - a);
         <div>
           <h3 class="photo-year">{y}</h3>
           <div class="photo-grid">
-            {photos.filter((p) => p.year === y).map((p) => (
+            {life.filter((p) => p.year === y).map((p) => (
               <figure class="photo-card">
                 <button
                   class="photo-zoom"
@@ -35,6 +37,28 @@ const years = [...new Set(photos.map((p) => p.year))].sort((a, b) => b - a);
           </div>
         </div>
       ))}
+
+      {equipment.length > 0 && (
+        <div>
+          <h3 class="photo-year">Equipment</h3>
+          <div class="photo-grid">
+            {equipment.map((p) => (
+              <figure class="photo-card">
+                <button
+                  class="photo-zoom"
+                  type="button"
+                  data-src={`${base}/photos/${p.file}`}
+                  data-caption={p.caption}
+                  aria-label="사진 크게 보기"
+                >
+                  <img src={`${base}/photos/${p.file}`} alt={p.caption} loading="lazy" />
+                </button>
+                {p.caption && <figcaption>{p.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 

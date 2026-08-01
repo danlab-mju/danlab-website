@@ -17,42 +17,50 @@
  {
   "file": "photo-102.jpg",
   "year": 2026,
-  "caption": "AI 추론 서버 구축 — Advantech HPC 섀시 (2026.05)"
+  "caption": "AI 추론 서버 구축 — Advantech HPC 섀시 (2026.05)",
+  "equipment": true
  },
  {
   "file": "photo-103.jpg",
   "year": 2026,
-  "caption": "AI 추론 서버 조립 (2026.05)"
+  "caption": "AI 추론 서버 조립 (2026.05)",
+  "equipment": true
  },
  {
   "file": "photo-104.jpg",
   "year": 2026,
-  "caption": "AI 추론 서버 조립 (2026.05)"
+  "caption": "AI 추론 서버 조립 (2026.05)",
+  "equipment": true
  },
  {
   "file": "photo-105.jpg",
   "year": 2026,
-  "caption": "NVIDIA H100 · Mobilint MLA100 장착 (2026.05)"
+  "caption": "NVIDIA H100 · Mobilint MLA100 장착 (2026.05)",
+  "equipment": true
  },
  {
   "file": "photo-106.jpg",
   "year": 2026,
-  "caption": "NVIDIA H100 · Mobilint MLA100 장착 (2026.05)"
+  "caption": "NVIDIA H100 · Mobilint MLA100 장착 (2026.05)",
+  "equipment": true
  },
  {
   "file": "photo-107.jpg",
   "year": 2026,
-  "caption": "Mobilint MLA100 NPU 카드 (2026.05)"
+  "caption": "Mobilint MLA100 NPU 카드 (2026.05)",
+  "equipment": true
  },
  {
   "file": "photo-108.jpg",
   "year": 2026,
-  "caption": "Mobilint MLA100 NPU 카드 (2026.05)"
+  "caption": "Mobilint MLA100 NPU 카드 (2026.05)",
+  "equipment": true
  },
  {
   "file": "photo-109.jpg",
   "year": 2026,
-  "caption": "GPU 워크스테이션 (2026.05)"
+  "caption": "GPU 워크스테이션 (2026.05)",
+  "equipment": true
  },
  {
   "file": "photo-093.jpg",
