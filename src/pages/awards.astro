@@ -2,22 +2,22 @@
 import Base from '../layouts/Base.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const awards = [
-  { when: '2026.04', what: 'JCCI 2026 도전 골든벨 1위', who: '임채윤', detail: '학부생과 대학원생을 위한 도전 골든벨 세션' },
-  { when: '2026.02', what: '한국통신학회 동계종합학술발표회 아이디어경진대회 대상', who: '장하민 · 박인영 · 박정희 · 정종오 (TEAM 단밤)', detail: '' },
-  { when: '2026.02', what: '한국통신학회 학부논문 우수논문상 장려상', who: '장하민', detail: '시계열 랜드마크 전처리와 입력 특징 확장을 이용한 Multi Encoder 구조 한국어 수어 단어 인식' },
-  { when: '2026.02', what: '한국통신학회 동계종합학술발표회 우수논문상', who: '김용호', detail: '피셔 정보량 기반의 적응형 정규화를 통한 증거 기반 딥러닝의 불확실성 추정 성능 향상' },
-  { when: '2026.01', what: '한국통신학회 해동우수논문상', who: '임채윤', detail: '단일 이미지 기반 기하 일관 다중 시점 합성과 생성적 보완을 이용한 데이터 증강' },
-  { when: '2025.09', what: '제6회 한국인공지능학술대회 최우수논문상', who: '김서현', detail: '심각도 추정·인과 분석 통합 기반 웨이퍼 결함 및 자연어 리포트 생성' },
-  { when: '2025.09', what: '제6회 한국인공지능학술대회 우수논문상', who: '임채윤', detail: '다축 평면 투영 기반 3D 객체 탐지를 활용한 ROI 보존형 포인트 클라우드 다운샘플링' },
-  { when: '2024.10', what: '메타버스 개발자 경진대회 장려상', who: '임채윤 · 장소현', detail: 'MR기반 AI Companion 콘텐츠 SMAF (Smart My AI Friend)' },
-  { when: '2024', what: '명지대학교 ChatGPT 기반 AI 실전활용 경진대회 장려상', who: '서지원 · 임우진', detail: '' },
-  { when: '2024.01', what: '한국통신학회 해동우수논문상', who: '김건희', detail: '최소 신장 트리를 이용한 UAV 기반 분산 연합학습 집계 전략' },
-  { when: '2023.11', what: '한국통신학회 공로상', who: '박현희 교수', detail: '' },
+  { when: '2026.04', what: 'JCCI 2026 도전 골든벨 1위', en: '1st Place, Golden Bell Challenge at JCCI 2026', who: '임채윤', detail: '학부생과 대학원생을 위한 도전 골든벨 세션' },
+  { when: '2026.02', what: '한국통신학회 동계종합학술발표회 아이디어경진대회 대상', en: 'Grand Prize, Idea Contest at the KICS Winter Conference', who: '장하민 · 박인영 · 박정희 · 정종오 (TEAM 단밤)', detail: '' },
+  { when: '2026.02', what: '한국통신학회 학부논문 우수논문상 장려상', en: 'Encouragement Award for Undergraduate Papers, KICS Winter Conference', who: '장하민', detail: '시계열 랜드마크 전처리와 입력 특징 확장을 이용한 Multi Encoder 구조 한국어 수어 단어 인식' },
+  { when: '2026.02', what: '한국통신학회 동계종합학술발표회 우수논문상', en: 'Excellent Paper Award, KICS Winter Conference', who: '김용호', detail: '피셔 정보량 기반의 적응형 정규화를 통한 증거 기반 딥러닝의 불확실성 추정 성능 향상' },
+  { when: '2026.01', what: '한국통신학회 해동우수논문상', en: 'KICS Haedong Excellent Paper Award', who: '임채윤', detail: '단일 이미지 기반 기하 일관 다중 시점 합성과 생성적 보완을 이용한 데이터 증강' },
+  { when: '2025.09', what: '제6회 한국인공지능학술대회 최우수논문상', en: 'Best Paper Award, 6th Korea Artificial Intelligence Conference', who: '김서현', detail: '심각도 추정·인과 분석 통합 기반 웨이퍼 결함 및 자연어 리포트 생성' },
+  { when: '2025.09', what: '제6회 한국인공지능학술대회 우수논문상', en: 'Excellent Paper Award, 6th Korea Artificial Intelligence Conference', who: '임채윤', detail: '다축 평면 투영 기반 3D 객체 탐지를 활용한 ROI 보존형 포인트 클라우드 다운샘플링' },
+  { when: '2024.10', what: '메타버스 개발자 경진대회 장려상', en: 'Encouragement Award, Metaverse Developer Contest', who: '임채윤 · 장소현', detail: 'MR기반 AI Companion 콘텐츠 SMAF (Smart My AI Friend)' },
+  { when: '2024', what: '명지대학교 ChatGPT 기반 AI 실전활용 경진대회 장려상', en: 'Encouragement Award, MJU ChatGPT AI Application Contest', who: '서지원 · 임우진', detail: '' },
+  { when: '2024.01', what: '한국통신학회 해동우수논문상', en: 'KICS Haedong Excellent Paper Award', who: '김건희', detail: '최소 신장 트리를 이용한 UAV 기반 분산 연합학습 집계 전략' },
+  { when: '2023.11', what: '한국통신학회 공로상', en: 'KICS Service Award', who: '박현희 교수', detail: '' },
   { when: '2023.11', what: 'BWCCA 2023 Best Paper Award', who: '김용호', detail: 'Enhancing Image Classification and Explainability with Object Isolation and Background Randomization' },
-  { when: '2023', what: '명지대학교 우수연구학술상', who: '박현희 교수', detail: '' },
-  { when: '2022.10', what: '한국통신학회 우수논문상', who: '김지나', detail: '단말의 활성화 상태를 고려한 Q-learning 기반의 Adaptive Slotted ALOHA 기법' },
-  { when: '2022.02', what: '한국통신학회 해동우수논문상', who: '김형빈', detail: '연합학습에서의 사용자 경험 기반 앙상블 기법' },
-  { when: '2021.11', what: '한국통신학회 우수논문상', who: '김용호', detail: 'CAM의 바운딩 박스 IoU 개선을 위한 Background Remove-Average Class Activation Map 기법' },
+  { when: '2023', what: '명지대학교 우수연구학술상', en: 'MJU Excellence in Research Award', who: '박현희 교수', detail: '' },
+  { when: '2022.10', what: '한국통신학회 우수논문상', en: 'KICS Excellent Paper Award', who: '김지나', detail: '단말의 활성화 상태를 고려한 Q-learning 기반의 Adaptive Slotted ALOHA 기법' },
+  { when: '2022.02', what: '한국통신학회 해동우수논문상', en: 'KICS Haedong Excellent Paper Award', who: '김형빈', detail: '연합학습에서의 사용자 경험 기반 앙상블 기법' },
+  { when: '2021.11', what: '한국통신학회 우수논문상', en: 'KICS Excellent Paper Award', who: '김용호', detail: 'CAM의 바운딩 박스 IoU 개선을 위한 Background Remove-Average Class Activation Map 기법' },
 ];
 // 수상 사진: 기존 danlab.mju.ac.kr/news 페이지에서 백업 (site-backup/final/images/news_*)
 const photos = [
@@ -42,6 +42,7 @@ const photos = [
           <div class="award">
             <div class="when">{a.when}</div>
             <div class="what">{a.what}</div>
+            {a.en && <div class="what-en">{a.en}</div>}
             <div class="who">{a.who}</div>
             {a.detail && <div class="detail">{a.detail}</div>}
           </div>

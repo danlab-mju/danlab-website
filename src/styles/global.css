@@ -318,6 +318,7 @@ section.block:last-of-type { border-bottom: none; }
 .award:last-child, .award:nth-last-child(2):nth-child(odd) { border-bottom: none; }
 .award .when { font-family: var(--font-mono); font-size: 0.74rem; color: var(--slate); }
 .award .what { font-weight: 600; margin: 6px 0 2px; letter-spacing: -0.01em; }
+.award .what-en { font-size: 0.8rem; color: var(--slate); margin-bottom: 2px; }
 .award .who { font-size: 0.88rem; color: var(--accent); }
 .award .detail { font-size: 0.86rem; color: var(--slate); margin-top: 4px; }
 
