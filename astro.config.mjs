@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 
-// 배포 전 확인:
-// - GitHub Pages(프로젝트 페이지)로 올리면 site/base를 저장소명에 맞게 수정
-// - 커스텀 도메인(danlab.mju.ac.kr) 연결 후에는 base: '/' 로 되돌릴 것
+// 커스텀 도메인(danlab.mju.ac.kr) 기준 설정.
+// DNS(CNAME → danlab-mju.github.io) 적용 전까지는
+// https://danlab-mju.github.io/danlab-website/ 경로가 깨질 수 있음.
 export default defineConfig({
-  site: 'https://danlab-mju.github.io',
-  base: '/danlab-website',
+  site: 'https://danlab.mju.ac.kr',
+  base: '/',
   trailingSlash: 'ignore',
 });
