@@ -40,7 +40,6 @@ const patents = [
   { year: 2022, authors: '박현희, 김형빈', title: '연합학습을 이용한 비디오 영상의 특정 구간 추출 방법 및 시스템', appNo: '10-2022-0024331', date: '2022.02.24', note: '과제 No. 2021-0-00368, 2021-0-00990', regNo: '10-2834386', regDate: '2025.07.10' },
   { year: 2021, authors: '박현희, 김형빈, 우기문, 김용호, 김지하', title: '딥러닝을 이용한 스포츠 경기 동영상의 상황 변화 구간 추출 방법 및 장치', appNo: '10-2021-0191387', date: '2021.12.29', note: '과제 No. 2021-0-00990' },
 ];
-const registered = patents.filter((p) => p.regNo).length;
 ---
 <Base title="Patents" description="DAN Lab 특허 — 국내 특허 출원·등록 목록">
   <section class="block">
@@ -48,7 +47,6 @@ const registered = patents.filter((p) => p.regNo).length;
       <div class="section-head">
         <span class="eyebrow"><i>01</i> / Patents</span>
         <h2>특허</h2>
-        <p>연구실에서 출원한 국내 특허 {patents.length}건(등록 {registered}건 포함)입니다. 출원기관: 명지대학교 산학협력단.</p>
       </div>
       <div class="pub-list">
         {patents.map((p) => (
@@ -69,10 +67,6 @@ const registered = patents.filter((p) => p.regNo).length;
 
       <div class="section-head" style="margin-top:56px;">
         <h2>Patents before 2017</h2>
-        <p>
-          LG전자 재직 시절의 국제·국내 특허 83건(국제출원 67 · 국제등록 6 · 국내등록 10)은
-          Director 프로필 페이지에 정리되어 있습니다.
-        </p>
       </div>
       <a class="btn" href={`${base}/professor`}>Director profile</a>
     </div>
