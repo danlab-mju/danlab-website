@@ -5,5 +5,5 @@ venue: "The 29th International Conference on Network-Based Information Systems (
 year: 2026
 type: conference
 pillar: distributed-ai
-note: "Best Paper Award · September 2026"
+note: "Best Paper Award · September 2026 · No. 2022R1A2C2005705, No. RS-2024-00469138"
 ---
