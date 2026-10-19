@@ -3,6 +3,7 @@ title: "LyMAPPO: Lyapunov-Constrained Independent Learning for Ultra-High Reliab
 authors: "Jiha Kim, Seunghyun Park, Hyunhee Park"
 venue: "IEEE Transactions on Cognitive Communications and Networking (TCCN)"
 year: 2026
+sort: 202610
 type: submitted
 note: "Revision 1 · Under review · SCI · submitted July 2026"
 ---
