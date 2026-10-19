@@ -3,6 +3,7 @@ title: "FedAWT: Adaptive Federated Learning via Dynamic Epoch Adjustment for Het
 authors: "Geonhui Kim, Seunghyun Park, Hyunhee Park"
 venue: "Internet of Things (Elsevier), vol. 34, art. no. 101771"
 year: 2025
+sort: 202511
 type: journal
 pillar: distributed-ai
 note: "SCIE · IF 6.0 · November 2025 · NRF No. 2022R1A2C2005705, RS-2024-00469138"

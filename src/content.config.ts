@@ -8,6 +8,7 @@ const publications = defineCollection({
     authors: z.string(),
     venue: z.string(),
     year: z.number(),
+    sort: z.number().optional(), // 연도 내 정렬 키 (YYYYMM, 클수록 위)
     type: z.enum(['journal', 'conference', 'submitted']).default('journal'),
     pillar: z.enum(['distributed-ai', 'networked-robotics', 'on-device']).optional(),
     note: z.string().optional(),

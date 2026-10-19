@@ -3,6 +3,7 @@ title: "Data Division Transmission Method with Performance Analysis in Wi-Fi 7 M
 authors: "Byungchan Kim, Seunghyun Park, Hyunhee Park"
 venue: "IEICE Transactions on Communications, vol. E108-B, no. 9, pp. 1052–1065"
 year: 2025
+sort: 202509
 type: journal
 pillar: on-device
 note: "SCIE · September 2025 · NRF No. 2022R1A2C2005705"

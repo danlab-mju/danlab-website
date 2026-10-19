@@ -1,8 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+const key = (p) => p.data.sort ?? p.data.year * 100;
 const all = (await getCollection('publications')).sort(
-  (a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id)
+  (a, b) => key(b) - key(a) || a.id.localeCompare(b.id)
 );
 const journals = all.filter((p) => p.data.type === 'journal');
 const conferences = all.filter((p) => p.data.type === 'conference');

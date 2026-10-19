@@ -3,6 +3,7 @@ title: "Adaptive Point Cloud Downsampling Based on 3-D ROI Detection for Improve
 authors: "Chaeyun Lim, Seunghyun Park, Hyunhee Park"
 venue: "IEEE Access, vol. 14, pp. 68039–68053"
 year: 2026
+sort: 202604
 type: journal
 pillar: networked-robotics
 note: "SCIE · April 2026 · NRF No. 2022R1A2C2005705, RS-2024-00469138"

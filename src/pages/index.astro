@@ -3,9 +3,10 @@ import Base from '../layouts/Base.astro';
 import BlacksandLogo from '../components/BlacksandLogo.astro';
 import { getCollection } from 'astro:content';
 
+const pubKey = (p) => p.data.sort ?? p.data.year * 100;
 const pubs = (await getCollection('publications'))
   .filter((p) => p.data.type === 'journal')
-  .sort((a, b) => b.data.year - a.data.year)
+  .sort((a, b) => pubKey(b) - pubKey(a) || a.id.localeCompare(b.id))
   .slice(0, 4);
 const news = (await getCollection('news'))
   .sort((a, b) => b.data.sort - a.data.sort)
